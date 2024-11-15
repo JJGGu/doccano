@@ -43,7 +43,7 @@ Artifact:
       RepoType: Public
   Artifact_3:
     ArtifactType: AcrImage
-    ArtifactName: AcrImage-doccano-doccano
+    ArtifactName: AcrImage-rabbitmq
     ArtifactProperty:
       RepoName: ${AcrImageBuilder.AcrImage_2.RepoName}
       Tag: ${AcrImageBuilder.AcrImage_2.Tag}
@@ -57,24 +57,10 @@ Artifact:
       RepoType: Public
   Artifact_5:
     ArtifactType: AcrImage
-    ArtifactName: AcrImage-rabbitmq
+    ArtifactName: AcrImage-postgres
     ArtifactProperty:
       RepoName: ${AcrImageBuilder.AcrImage_4.RepoName}
       Tag: ${AcrImageBuilder.AcrImage_4.Tag}
-      RepoType: Public
-  Artifact_6:
-    ArtifactType: AcrImage
-    ArtifactName: AcrImage-doccano-doccano
-    ArtifactProperty:
-      RepoName: ${AcrImageBuilder.AcrImage_5.RepoName}
-      Tag: ${AcrImageBuilder.AcrImage_5.Tag}
-      RepoType: Public
-  Artifact_7:
-    ArtifactType: AcrImage
-    ArtifactName: AcrImage-postgres
-    ArtifactProperty:
-      RepoName: ${AcrImageBuilder.AcrImage_6.RepoName}
-      Tag: ${AcrImageBuilder.AcrImage_6.Tag}
       RepoType: Public
 AcrImageBuilder:
   AcrImage_1:
@@ -84,25 +70,15 @@ AcrImageBuilder:
     Tag: backend
   AcrImage_2:
     BuildType: DockerRepo
-    DockerRepoUrl: doccano/doccano:backend
-    RepoName: doccano/doccano
-    Tag: backend
-  AcrImage_3:
-    BuildType: DockerRepo
-    DockerRepoUrl: doccano/doccano:backend
-    RepoName: doccano/doccano
-    Tag: backend
-  AcrImage_4:
-    BuildType: DockerRepo
     DockerRepoUrl: rabbitmq:3.10.7-alpine
     RepoName: rabbitmq
     Tag: 3.10.7-alpine
-  AcrImage_5:
+  AcrImage_3:
     BuildType: DockerRepo
     DockerRepoUrl: doccano/doccano:frontend
     RepoName: doccano/doccano
     Tag: frontend
-  AcrImage_6:
+  AcrImage_4:
     BuildType: DockerRepo
     DockerRepoUrl: postgres:13.3-alpine
     RepoName: postgres
